@@ -11,6 +11,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SetproductComponent } from './setproduct/setproduct.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdmintabComponent } from './admin/admintab/admintab.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     AboutusComponent,
     SettingsComponent,
-    SetproductComponent
+    SetproductComponent,
+    AdmintabComponent
   ],
   imports: [
     BrowserModule,

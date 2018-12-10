@@ -16,9 +16,13 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatTooltipModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatCommonModule
 } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   imports: [
@@ -36,7 +40,11 @@ import { DomSanitizer } from '@angular/platform-browser';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTooltipModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    CdkTableModule,
+    MatCommonModule
   ],
   exports: [
     MatButtonModule,
@@ -53,15 +61,19 @@ import { DomSanitizer } from '@angular/platform-browser';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTooltipModule,
-    MatProgressBarModule
-      
+    MatProgressBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    CdkTableModule,
+    MatCommonModule
+
   ],
-  providers: [  
-    MatDatepickerModule  
+  providers: [
+    MatDatepickerModule
   ]
 })
-export class MaterialModule { 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer){
+export class MaterialModule {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon(
       'fb',
       sanitizer.bypassSecurityTrustResourceUrl('assets/icons/fb.svg')
