@@ -10,7 +10,6 @@
   <mat-icon [color]="userStatusColor">account_box</mat-icon>
   <mat-icon matBadge="{{counter}}" matBadgePosition="before" matBadgeColor="accent">shopping_cart</mat-icon>
   <mat-icon [matMenuTriggerFor]="helpMenu">help</mat-icon>
-  <mat-icon>settings</mat-icon>
 
   <mat-menu #helpMenu="matMenu">
     <div *ngIf="helpTitle== 'page setting'">
@@ -27,7 +26,7 @@
       <a href="{{configData.linkedin}}" target="_blank"><button mat-menu-item><mat-icon>linKedin</mat-icon></button></a>
       <a href="{{configData.github}}" target="_blank"><button mat-menu-item><mat-icon>git</mat-icon></button></a> 
       <button mat-menu-item routerLink="/aboutus"><mat-icon>info</mat-icon></button>
-      <button mat-menu-item routerLink="/setproduct"><mat-icon>settings</mat-icon></button>
+      <button mat-menu-item routerLink="/admin"><mat-icon>settings</mat-icon></button>
     </mat-menu>
 </mat-toolbar>
 

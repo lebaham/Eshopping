@@ -1,0 +1,23 @@
+<header pageTitle = "Settings" inconTitle="settings" helpTitle="settingspagehelp"></header>
+<mat-card>
+  <mat-card-actions align="start">
+  <form>
+    <mat-form-field class="exemple-form">
+      <input matInput type="text" placeholder="search" #search="ngModel" ngModel name="search" minlength="3" maxlength="50">
+    </mat-form-field>
+    <span matTootilp="Clear All">
+        <mat-icon color="primary" (click)="this.searchForm.reset();">clear</mat-icon>
+    </span>
+      <span class="small-spacer"></span>
+      <span matTooltip="Search All">
+        <mat-icon color="primary" (click)="getFilterData(search.value)">search</mat-icon>
+      </span>
+  </form>
+  </mat-card-actions>
+  <mat-card-content *ngIf="toggle else showProductDetails">
+
+  </mat-card-content>
+  <ng-template #showproductDetails>
+
+  </ng-template>
+</mat-card>
