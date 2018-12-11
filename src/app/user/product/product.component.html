@@ -1,23 +1,58 @@
 <header pageTitle = "Settings" inconTitle="settings" helpTitle="settingspagehelp"></header>
 <mat-card>
   <mat-card-actions align="start">
-  <form>
-    <mat-form-field class="exemple-form">
-      <input matInput type="text" placeholder="search" #search="ngModel" ngModel name="search" minlength="3" maxlength="50">
-    </mat-form-field>
-    <span matTootilp="Clear All">
-        <mat-icon color="primary" (click)="this.searchForm.reset();">clear</mat-icon>
-    </span>
-      <span class="small-spacer"></span>
-      <span matTooltip="Search All">
-        <mat-icon color="primary" (click)="getFilterData(search.value)">search</mat-icon>
-      </span>
-  </form>
+      <form>
+        <mat-form-field class="exemple-form">
+          <input matInput type="text" placeholder="search" #search="ngModel" ngModel name="search" minlength="3" maxlength="50">
+        </mat-form-field>
+        <span matTootilp="Clear All">
+            <mat-icon color="primary" (click)="this.searchForm.reset();">clear</mat-icon>
+        </span>
+          <span class="small-spacer"></span>
+          <span matTooltip="Search All">
+            <mat-icon color="primary" (click)="getFilterData(search.value)">search</mat-icon>
+          </span>
+      </form>
   </mat-card-actions>
   <mat-card-content *ngIf="toggle else showProductDetails">
-
+    <mat-list>
+        <mat-list-item *ngFor="let item of members | async" (click)="showDetails(item);toggle=!toggle">
+          <h5 mat-line>
+            {{item.name}}
+            <mat-icon mat-list-icon>pageview</mat-icon>
+          </h5>
+          <p class="label-hint" mat-line>{{item.category}}/{{item.scategory}}</p>
+          </mat-list-item>
+    </mat-list>
   </mat-card-content>
   <ng-template #showproductDetails>
-
+    <b>{{myDocData.name}}</b>
+    <span class="small-spacer"></span>
+    <span matTooltip="Show All Products">
+      <mat-icon color="primary" (click)="toggle=!toggle">backspace</mat-icon>
+    </span>
+    <p class="label-go" mat-line>{{myDocData.sname}} {{myDocData.lname}}</p>
+    <p class="label-hint" mat-line>{{myDocData.descr}}</p>
+    <p class="label-go" mat-line>Color: {{myDocData.color}} Size: {{myDocData.size}} Price: {{myDocData.price}}</p>
+    <p class="label-error" mat-line>Shipping: {{myDocData.shipping}} Discount: {{myDocData.discount}}</p>
+    <div>
+      <mat-error *ngIf="savedChanges">
+        <div>
+          <div>
+            Shopping cart is update
+          </div>
+        </div>
+        <mat-icon (click)="savedChanges=!savedChanges" color="primary">close</mat-icon>
+        <span class="med-spacer"></span>
+      </mat-error>
+    </div>
+    <mat-icon (click)="countProd('remove')" color="primary">remove</mat-icon>
+    {{counter}}
+    <mat-icon (click)="countProd('add')" color="primary">add</mat-icon>
+    <span class="med-spacer"></span>
+    <div>
+      <button [disabled]="counter < 1" mat-raised-button color="primary" (click)="addToCart(myDocData,counter)">Add to cart</button>
+    </div>
+    <img [src]="profilUrl | async" width="300" height="300">
   </ng-template>
 </mat-card>

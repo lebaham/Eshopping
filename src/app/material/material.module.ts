@@ -19,7 +19,9 @@ import {
   MatProgressBarModule,
   MatTableModule,
   MatPaginatorModule,
-  MatCommonModule
+  MatCommonModule,
+  MatGridListModule,
+  MatListModule
 } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CdkTableModule } from '@angular/cdk/table';
@@ -44,7 +46,8 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatTableModule,
     MatPaginatorModule,
     CdkTableModule,
-    MatCommonModule
+    MatCommonModule,
+    MatGridListModule
   ],
   exports: [
     MatButtonModule,
@@ -65,7 +68,9 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatTableModule,
     MatPaginatorModule,
     CdkTableModule,
-    MatCommonModule
+    MatCommonModule,
+    MatGridListModule,
+    MatListModule
 
   ],
   providers: [

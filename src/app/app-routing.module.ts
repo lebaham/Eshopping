@@ -5,6 +5,7 @@ import { AboutusComponent } from './shared/aboutus/aboutus.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SetproductComponent } from './admin/setproduct/setproduct.component';
 import { AdmintabComponent } from './admin/admintab/admintab.component';
+import { ProductComponent } from './user/product/product.component';
 
 const routes: Routes =[
   {path: '', redirectTo: 'aboutus', pathMatch: 'full'},
@@ -12,6 +13,7 @@ const routes: Routes =[
   {path: 'setproduct', component: SetproductComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'admin', component: AdmintabComponent},
+  {path: 'product', component: ProductComponent},
   {path: '**', redirectTo: 'aboutus', pathMatch: 'full'}
 ]
 
