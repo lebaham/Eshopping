@@ -217,6 +217,15 @@
 </ng-template>
 
 <ng-template #showResMode>
+  <span class="example-icon"></span>
+  <span class="example-icon"></span>
+  <span matTooltip="Add New">
+    <mat-icon color="primary" (color)="toogle('addMode');">add</mat-icon>
+  </span>
+  <span class="example-icon"></span>
+  <span matTooltip="Show Recent Results">
+      <mat-icon color="primary" (color)="toogle('searchMode');">search</mat-icon>
+  </span>
   <div>
     <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">

@@ -14,6 +14,7 @@ export class SetproductComponent implements OnInit {
   savedChanges = false;
   myDocData: any;
   error = false;
+  counter = 0;
   errorMessage = '';
   dataLoading = false;
   private querySubscription;
